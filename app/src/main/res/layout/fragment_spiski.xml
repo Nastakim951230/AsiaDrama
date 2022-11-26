@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.SpiskiFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Blue_background"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="50dp"
+        android:background="@color/Dark_Blue_background">
 
+        <ImageButton
+            android:id="@+id/addpredlogenie"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:scaleType="fitXY"
+            android:background="@color/Dark_Blue_background"
+            android:foregroundGravity="right"
+            android:src="@drawable/add"></ImageButton>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Predlogenie"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:backgroundTint="@color/Dark_Blue_background"
+            android:text="Все"
+            android:textColor="#000000"
+            app:cornerRadius="15dp" />
+
+        <Button
+            android:id="@+id/MyPredlogenie"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/Dark_Blue_background"
+            android:text="Мои"
+            android:textColor="#040404"
+            app:cornerRadius="15dp" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/List_Predlogenie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</LinearLayout>
 </FrameLayout>
