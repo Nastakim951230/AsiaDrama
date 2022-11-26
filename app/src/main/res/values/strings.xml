@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AsiaDrama</string>
+    <string name="Registr"><b>Регистрация</b></string>
+    <string name="nickname">Nickname</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="Vhod"><b>Вход</b></string>
+    <string name="glavna"><b>Главная</b></string>
+    <string name="izbronoe"><b>Избраное</b></string>
+    <string name="profil"><b>Профиль</b></string>
+    <string name="vhodpol">Уже зарегистрирован? Давайте войдем</string>
+    <string name="reg">У вас нет учетной записи? Давайте зарегистрируемся</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

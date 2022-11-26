@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single" >
+        <item
+            android:id="@+id/nav_glavnoe"
+            android:icon="@drawable/ic_action_name"
+            android:title="Главная" />
+        <item
+            android:id="@+id/nav_izbrannoe"
+            android:icon="@drawable/ic_action_turned"
+            android:title="Избранное" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_action_post_add"
+            android:title="Предложение" />
+        <item
+            android:id="@+id/nav_nastroika"
+            android:icon="@drawable/ic_action_settings"
+            android:title="Настройка пользователя" />
+
+    </group>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_vyhod"
+                android:icon="@drawable/ic_action_power_settings_new"
+                android:title="Выход" />
+        </menu>
+    </item>
+
+</menu>

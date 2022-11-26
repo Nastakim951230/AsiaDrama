@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/nav_glavnoe">
+
+    <fragment
+        android:id="@+id/nav_glavnoe"
+        android:name="com.example.asia.Fragments.Glavnay_Fragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_glavnay_" />
+    <fragment
+        android:id="@+id/nav_izbrannoe"
+        android:name="com.example.asia.Fragments.Izbrannoe_Fragment"
+        android:label="Избранное"
+        tools:layout="@layout/fragment_izbrannoe_" />
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.asia.Fragments.Nastroiki_Fragment"
+        android:label="Настройки"
+        tools:layout="@layout/fragment_nastroiki_" />
+    <fragment
+        android:id="@+id/nav_nastroika"
+        android:name="com.example.asia.Fragments.SpiskiFragment"
+        android:label="Предложения"
+        tools:layout="@layout/fragment_spiski" />
+</navigation>
