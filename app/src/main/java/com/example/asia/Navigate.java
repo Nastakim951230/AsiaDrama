@@ -47,6 +47,7 @@ public class Navigate extends AppCompatActivity {
         NavController navController= Navigation.findNavController(this,R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigationView,navController);
 
+
     }
 
 

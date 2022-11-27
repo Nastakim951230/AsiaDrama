@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable-anydpi/keyPassword.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable/style_fona.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable/tool_bar_style.xml" value="0.222" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/activity_glavnay.xml" value="0.1" />
@@ -13,7 +14,8 @@
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/app_bar.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_glavnay_.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_izbrannoe_.xml" value="0.1" />
-        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_spiski.xml" value="0.2" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_nastroiki_.xml" value="0.2" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_spiski.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/header.xml" value="0.2" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />

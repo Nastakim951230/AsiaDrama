@@ -16,12 +16,12 @@
         android:label="Избранное"
         tools:layout="@layout/fragment_izbrannoe_" />
     <fragment
-        android:id="@+id/nav_slideshow"
+        android:id="@+id/nav_nastroika"
         android:name="com.example.asia.Fragments.Nastroiki_Fragment"
         android:label="Настройки"
         tools:layout="@layout/fragment_nastroiki_" />
     <fragment
-        android:id="@+id/nav_nastroika"
+        android:id="@+id/nav_slideshow"
         android:name="com.example.asia.Fragments.SpiskiFragment"
         android:label="Предложения"
         tools:layout="@layout/fragment_spiski" />
