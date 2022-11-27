@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.asia.Fragments.Glavnay_Fragment;
 import com.example.asia.Fragments.Izbrannoe_Fragment;
@@ -23,8 +24,9 @@ import com.example.asia.Fragments.Nastroiki_Fragment;
 import com.example.asia.Fragments.SpiskiFragment;
 import com.google.android.material.navigation.NavigationView;
 
-public class Navigate extends AppCompatActivity {
+import java.text.BreakIterator;
 
+public class Navigate extends AppCompatActivity{
 
 
 
@@ -49,6 +51,7 @@ public class Navigate extends AppCompatActivity {
 
 
     }
+
 
 
 }
