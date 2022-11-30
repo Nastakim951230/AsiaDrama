@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.Add_Predlogenie">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Blue_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+        <ImageView
+            android:id="@+id/Image_Predlogenie"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="40dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/add_photo" />
+
+        <EditText
+            android:id="@+id/Name_Predlogenie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/style"
+            android:hint="Название"
+            android:padding="9dp"
+            android:textColor="@color/text"
+            android:textColorHighlight="@color/high"
+            android:textColorHint="@color/high"
+            ></EditText>
+            <Spinner
+                android:id="@+id/Ganr_Predlogenie"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/style"
+                android:padding="9dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/high"
+                android:textColorHint="@color/high"
+                android:layout_marginBottom="15dp"
+                />
+            <Spinner
+                android:id="@+id/Country_Predlogenie"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/style"
+                android:padding="9dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/high"
+                android:textColorHint="@color/high"
+                android:layout_marginBottom="15dp"
+                />
+
+
+            <EditText
+                android:id="@+id/Year_Predlogenie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/style"
+                android:ems="10"
+                android:inputType="numberSigned"
+                android:hint="Год"
+                android:padding="9dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/high"
+                android:textColorHint="@color/high"
+                ></EditText>
+            <EditText
+                android:id="@+id/Time_Predlogenie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/style"
+                android:ems="10"
+                android:inputType="numberSigned"
+                android:hint="Время"
+                android:padding="9dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/high"
+                android:textColorHint="@color/high"
+                ></EditText>
+
+            <Spinner
+                android:id="@+id/Actor_Predlogenie"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/style"
+                android:padding="9dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/high"
+                android:textColorHint="@color/high"
+                android:layout_marginBottom="15dp"
+                />
+            <TextView
+                android:layout_marginBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="О Фильме/Сериале:"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                />
+            <EditText
+                android:id="@+id/OSebe"
+                android:background="@drawable/style"
+                android:fontFamily="@font/rubik_light"
+                android:layout_marginBottom="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"/>
+
+            <Button
+                android:id="@+id/btnAddPredlogenie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/text"
+                android:fontFamily="@font/rubik_light"
+
+
+                android:padding="9dp"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="15dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</FrameLayout>

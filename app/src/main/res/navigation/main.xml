@@ -25,4 +25,10 @@
         android:name="com.example.asia.Fragments.SpiskiFragment"
         android:label="Предложения"
         tools:layout="@layout/fragment_spiski" />
+    <fragment
+        android:id="@+id/add_predlogenie"
+        android:name="com.example.asia.Fragments.Add_Predlogenie"
+        android:label="fragment_add__predlogenie"
+        tools:layout="@layout/fragment_add__predlogenie" />
+
 </navigation>

@@ -6,6 +6,7 @@
     <string name="password">Пароль</string>
     <string name="Vhod"><b>Вход</b></string>
     <string name="glavna"><b>Главная</b></string>
+    <string name="add"><b>Добавить</b></string>
     <string name="izbronoe"><b>Избраное</b></string>
     <string name="profil"><b>Профиль</b></string>
     <string name="vhodpol">Уже зарегистрирован? Давайте войдем</string>
