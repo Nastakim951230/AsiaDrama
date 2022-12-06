@@ -26,14 +26,14 @@
         android:label="Предложения"
         tools:layout="@layout/fragment_spiski" />
     <fragment
-        android:id="@+id/add_predlogenie"
-        android:name="com.example.asia.Fragments.Add_Predlogenie"
-        android:label="Добавление предложения"
-        tools:layout="@layout/fragment_add__predlogenie" />
-    <fragment
         android:id="@+id/nav_vyhod"
         android:name="com.example.asia.Fragments.ExitFragment"
         android:label="Выход"
         tools:layout="@layout/fragment_exit" />
+    <fragment
+        android:id="@+id/admin_menu"
+        android:name="com.example.asia.Fragments.AdminMenu"
+        android:label="Меню админа"
+        tools:layout="@layout/fragment_admin_menu" />
 
 </navigation>

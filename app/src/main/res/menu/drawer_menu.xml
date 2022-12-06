@@ -14,10 +14,10 @@
             android:icon="@drawable/ic_action_post_add"
             android:title="Предложение" />
         <item
-            android:id="@+id/add_predlogenie"
+            android:id="@+id/admin_menu"
             android:visible="true"
-            android:icon="@drawable/add"
-            android:title="Добавить предложение"
+            android:icon="@drawable/add_admin"
+            android:title="Меню админа"
             />
         <item
             android:id="@+id/nav_nastroika"

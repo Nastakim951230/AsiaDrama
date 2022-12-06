@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.AdminMenu">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Blue_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+
+            <Button
+                android:id="@+id/AddGenre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/text"
+                android:drawableLeft="@drawable/add"
+                android:fontFamily="@font/rubik_light"
+                android:text="Добавить жанр"
+                app:cornerRadius="15dp" />
+
+            <Button
+                android:id="@+id/AddPredlogenie"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+
+                android:backgroundTint="@color/text"
+                android:drawableLeft="@drawable/ic_action_post_add"
+                android:fontFamily="@font/rubik_light"
+                android:text="Добавить предложение"
+                android:textSize="14sp"
+                app:cornerRadius="15dp" />
+
+
+            <Button
+                android:id="@+id/AddAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/text"
+                android:drawableLeft="@drawable/add_personal"
+                android:fontFamily="@font/rubik_light"
+                android:text="Добавить админа"
+                app:cornerRadius="15dp" />
+
+            <Button
+                android:id="@+id/AddActor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+
+                android:backgroundTint="@color/text"
+                android:drawableLeft="@drawable/add_personal"
+                android:fontFamily="@font/rubik_light"
+                android:text="Добавить актера"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:cornerRadius="15dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
