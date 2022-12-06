@@ -28,7 +28,12 @@
     <fragment
         android:id="@+id/add_predlogenie"
         android:name="com.example.asia.Fragments.Add_Predlogenie"
-        android:label="fragment_add__predlogenie"
+        android:label="Добавление предложения"
         tools:layout="@layout/fragment_add__predlogenie" />
+    <fragment
+        android:id="@+id/nav_vyhod"
+        android:name="com.example.asia.Fragments.ExitFragment"
+        android:label="Выход"
+        tools:layout="@layout/fragment_exit" />
 
 </navigation>

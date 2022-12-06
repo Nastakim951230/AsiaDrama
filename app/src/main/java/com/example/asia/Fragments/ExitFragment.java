@@ -14,10 +14,10 @@ import com.example.asia.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SpiskiFragment#newInstance} factory method to
+ * Use the {@link ExitFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SpiskiFragment extends Fragment {
+public class ExitFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +28,7 @@ public class SpiskiFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public SpiskiFragment() {
+    public ExitFragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +38,11 @@ public class SpiskiFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SpiskiFragment.
+     * @return A new instance of fragment ExitFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SpiskiFragment newInstance(String param1, String param2) {
-        SpiskiFragment fragment = new SpiskiFragment();
+    public static ExitFragment newInstance(String param1, String param2) {
+        ExitFragment fragment = new ExitFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -57,20 +57,13 @@ public class SpiskiFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
+        startActivity(new Intent(getActivity(), Input.class));
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_spiski, container, false);
+        return inflater.inflate(R.layout.fragment_exit, container, false);
     }
- /*   public void add(View v)
-    {
-        Intent intent = new Intent(getActivity(), Add_Predlogenie_users.class);
-        startActivity(intent);
-    }*/
 }
