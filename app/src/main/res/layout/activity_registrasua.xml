@@ -100,6 +100,7 @@
                     android:backgroundTint="@color/text"
                     android:fontFamily="@font/rubik_light"
                     android:gravity="center"
+                    android:onClick="perehod"
                     android:padding="9dp"
                     android:text="@string/Registr"
                     android:textColor="@color/white"

@@ -80,7 +80,7 @@ public class Izbrannoe_Fragment extends Fragment {
 
         spec=tabHost.newTabSpec("Запланировано");
         spec.setContent(R.id.linearLayout2);
-        spec.setIndicator("Заплонировано");
+        spec.setIndicator("Запланировано");
         tabHost.addTab(spec);
 
         spec=tabHost.newTabSpec("Просмотрено");

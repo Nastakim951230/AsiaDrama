@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="add"
+    android:onClick="Add"
     tools:context=".Fragments.SpiskiFragment">
 
 
@@ -19,16 +19,17 @@
             android:layout_height="50dp"
             android:background="@color/Dark_Blue_background">
 
-            <ImageButton
+            <Button
                 android:id="@+id/addpredlogenie"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="0dp"
-                android:background="@color/Dark_Blue_background"
+                android:backgroundTint="@color/Dark_Blue_background"
+                android:drawableLeft="@drawable/add"
                 android:foregroundGravity="right"
-                android:scaleType="fitXY"
-                android:src="@drawable/add"></ImageButton>
+                android:onClick="Add"
+                android:scaleType="fitXY"></Button>
         </RelativeLayout>
 
         <LinearLayout

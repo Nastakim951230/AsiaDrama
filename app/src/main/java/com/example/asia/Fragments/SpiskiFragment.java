@@ -59,7 +59,11 @@ public class SpiskiFragment extends Fragment {
         }
 
     }
-
+    public void Add(View view)
+    {
+        Intent intent=new Intent(getActivity(),Add_Predlogenie_users.class);
+        startActivity(intent);
+    }
 
 
     @Override
@@ -68,9 +72,5 @@ public class SpiskiFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_spiski, container, false);
     }
- /*   public void add(View v)
-    {
-        Intent intent = new Intent(getActivity(), Add_Predlogenie_users.class);
-        startActivity(intent);
-    }*/
+
 }
