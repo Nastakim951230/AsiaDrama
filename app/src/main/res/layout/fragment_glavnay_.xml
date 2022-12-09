@@ -24,12 +24,13 @@
                 android:layout_marginTop="0dp" />
         </RelativeLayout>
 
-        <ListView
-            android:id="@+id/ListDrama"
+        <GridView
+            android:id="@+id/GridDrama"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:numColumns="2">
 
-        </ListView>
+        </GridView>
 
     </LinearLayout>
 
