@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.Add_Admin">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/Blue_background">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          android:gravity="center_horizontal"
+          android:orientation="vertical">
+         <ImageButton
+             android:id="@+id/NextMenuAdminAdmin"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="left"
+             android:backgroundTint="@color/Blue_background"
+             android:src="@drawable/next" />
+         <ImageView
+             android:id="@+id/Image_Admin"
+             android:layout_width="250dp"
+             android:layout_height="250dp"
+             android:layout_gravity="center_horizontal"
+             android:layout_margin="40dp"
+             android:adjustViewBounds="true"
+             android:src="@drawable/users" />
+         <EditText
+             android:id="@+id/Name_Admin"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="15dp"
+             android:background="@drawable/style"
+             android:hint="Nickname"
+             android:padding="9dp"
+             android:layout_marginLeft="30dp"
+             android:layout_marginRight="30dp"
+             android:textColor="@color/text"
+             android:textColorHighlight="@color/high"
+             android:textColorHint="@color/high"
+             ></EditText>
+         <EditText
+             android:id="@+id/Login_Admin"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="15dp"
+             android:background="@drawable/style"
+             android:hint="Логин"
+             android:padding="9dp"
+             android:layout_marginLeft="30dp"
+             android:layout_marginRight="30dp"
+             android:textColor="@color/text"
+             android:textColorHighlight="@color/high"
+             android:textColorHint="@color/high"
+             ></EditText>
+
+         <EditText
+             android:id="@+id/Password_Admin"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginBottom="15dp"
+             android:background="@drawable/style"
+             android:hint="Пароль"
+             android:padding="9dp"
+             android:layout_marginLeft="30dp"
+             android:layout_marginRight="30dp"
+             android:textColor="@color/text"
+             android:textColorHighlight="@color/high"
+             android:textColorHint="@color/high"
+             ></EditText>
+
+         <Button
+             android:id="@+id/btnAddAdmin"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginLeft="40dp"
+             android:layout_marginTop="15dp"
+             android:layout_marginRight="40dp"
+             android:backgroundTint="@color/text"
+             android:fontFamily="@font/rubik_light"
+             android:padding="9dp"
+             android:text="@string/add"
+             android:textColor="@color/white"
+             android:textSize="16sp"
+             app:cornerRadius="15dp" />
+      </LinearLayout>
+   </ScrollView>
+
+</FrameLayout>

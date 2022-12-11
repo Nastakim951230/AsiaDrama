@@ -20,20 +20,23 @@
         android:name="com.example.asia.Fragments.Nastroiki_Fragment"
         android:label="Настройки"
         tools:layout="@layout/fragment_nastroiki_" />
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.asia.Fragments.SpiskiFragment"
-        android:label="Предложения"
-        tools:layout="@layout/fragment_spiski" />
+
     <fragment
         android:id="@+id/nav_vyhod"
         android:name="com.example.asia.Fragments.ExitFragment"
         android:label="Выход"
         tools:layout="@layout/fragment_exit" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.asia.Fragments.Perehod_Spisok_Fragment"
+        android:label="Предложение"
+        tools:layout="@layout/fragment_perehod__spisok_" />
     <fragment
         android:id="@+id/admin_menu"
-        android:name="com.example.asia.Fragments.AdminMenu"
+        android:name="com.example.asia.Fragments.Perehod_Admin_Menu"
         android:label="Меню админа"
-        tools:layout="@layout/fragment_admin_menu" />
+        tools:layout="@layout/fragment_perehod__admin__menu" />
+
 
 </navigation>

@@ -1,6 +1,5 @@
 package com.example.asia.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,16 +8,15 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import com.example.asia.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SpiskiFragment#newInstance} factory method to
+ * Use the {@link Perehod_Admin_Menu#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SpiskiFragment extends Fragment {
+public class Perehod_Admin_Menu extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,8 +26,8 @@ public class SpiskiFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    ImageButton addButton;
-    public SpiskiFragment() {
+
+    public Perehod_Admin_Menu() {
         // Required empty public constructor
     }
 
@@ -39,11 +37,11 @@ public class SpiskiFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SpiskiFragment.
+     * @return A new instance of fragment Perehod_Admin_Menu.
      */
     // TODO: Rename and change types and number of parameters
-    public static SpiskiFragment newInstance(String param1, String param2) {
-        SpiskiFragment fragment = new SpiskiFragment();
+    public static Perehod_Admin_Menu newInstance(String param1, String param2) {
+        Perehod_Admin_Menu fragment = new Perehod_Admin_Menu();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,28 +56,15 @@ public class SpiskiFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflatedView = inflater.inflate(R.layout.fragment_spiski, container, false);
-        addButton = (ImageButton) inflatedView.findViewById(R.id.addpredlogenie);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Add_Predlogenie_Users fragment = new Add_Predlogenie_Users();
-                ft.replace(R.id.container, fragment);
-
-
-                ft.commit();
-            }
-        });
-        return inflatedView;
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        AdminMenu fragment = new AdminMenu();
+        ft.replace(R.id.containerAdmin, fragment);
+        ft.commit();
+        return inflater.inflate(R.layout.fragment_perehod__admin__menu, container, false);
     }
-
 }

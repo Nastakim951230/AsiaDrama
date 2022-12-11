@@ -1,24 +1,26 @@
 package com.example.asia.Fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 
 import com.example.asia.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SpiskiFragment#newInstance} factory method to
+ * Use the {@link Perehod_Spisok_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SpiskiFragment extends Fragment {
+public class Perehod_Spisok_Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,8 +30,8 @@ public class SpiskiFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    ImageButton addButton;
-    public SpiskiFragment() {
+
+    public Perehod_Spisok_Fragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +41,11 @@ public class SpiskiFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SpiskiFragment.
+     * @return A new instance of fragment Perehod_Spisok_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static SpiskiFragment newInstance(String param1, String param2) {
-        SpiskiFragment fragment = new SpiskiFragment();
+    public static Perehod_Spisok_Fragment newInstance(String param1, String param2) {
+        Perehod_Spisok_Fragment fragment = new Perehod_Spisok_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -54,32 +56,23 @@ public class SpiskiFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
+
+
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflatedView = inflater.inflate(R.layout.fragment_spiski, container, false);
-        addButton = (ImageButton) inflatedView.findViewById(R.id.addpredlogenie);
-        addButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Add_Predlogenie_Users fragment = new Add_Predlogenie_Users();
-                ft.replace(R.id.container, fragment);
-
-
-                ft.commit();
-            }
-        });
-        return inflatedView;
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        SpiskiFragment fragment = new SpiskiFragment();
+        ft.replace(R.id.container, fragment);
+        ft.commit();
+        return inflater.inflate(R.layout.fragment_perehod__spisok_, container, false);
     }
-
 }

@@ -1,12 +1,18 @@
 package com.example.asia.Fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.asia.R;
 
@@ -25,7 +31,7 @@ public class AdminMenu extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    Button ganr,admin,predlogenie,actor;
     public AdminMenu() {
         // Required empty public constructor
     }
@@ -57,10 +63,67 @@ public class AdminMenu extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_menu, container, false);
+        View inflatedView = inflater.inflate(R.layout.fragment_admin_menu, container, false);
+        predlogenie = (Button) inflatedView.findViewById(R.id.AddPredlogenie);
+        ganr= (Button) inflatedView.findViewById(R.id.AddGenre);
+        admin= (Button) inflatedView.findViewById(R.id.AddAdmin);
+        actor= (Button) inflatedView.findViewById(R.id.AddActor);
+       predlogenie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Add_Predlogenie fragment = new Add_Predlogenie();
+                ft.replace(R.id.containerAdmin, fragment);
+                ft.commit();
+            }
+        });
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Add_Admin fragment = new Add_Admin();
+                ft.replace(R.id.containerAdmin, fragment);
+                ft.commit();
+            }
+        });
+        actor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                Add_Actor fragment = new Add_Actor();
+                ft.replace(R.id.containerAdmin, fragment);
+                ft.commit();
+            }
+        });
+        ganr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                final View customLayout = getLayoutInflater().inflate(R.layout.name_ganr, null);
+                new AlertDialog.Builder(getParentFragment().getActivity())
+                        .setTitle("Жанр").setView(customLayout)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        EditText editText = customLayout.findViewById(R.id.NameGanr);
+                        sendDialogDataToActivity(editText.getText().toString());
+                    }
+
+
+                    // сделать что-то с данными, поступающими из AlertDialog
+                    private void sendDialogDataToActivity(String ganr) {
+                    }
+                }).show();
+            }
+        });
+        return inflatedView;
+
     }
 }

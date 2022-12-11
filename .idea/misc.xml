@@ -7,6 +7,7 @@
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable/style_fon_kino.xml" value="0.232" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable/style_fona.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable/tool_bar_style.xml" value="0.222" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/activity_add_predlogenie_users.xml" value="0.152" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/activity_add_predlolgenie_user.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/activity_glavnay.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/activity_input.xml" value="0.1" />
@@ -15,17 +16,23 @@
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/activity_navigate_admin.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/activity_registrasua.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/app_bar.xml" value="0.1" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/date_picker.xml" value="0.17777777777777778" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_add__actor.xml" value="0.264" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_add__admin.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_add__predlogenie.xml" value="0.1" />
-        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_add__predlogenie__users.xml" value="0.1" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_add__predlogenie__users.xml" value="0.16" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_add__predlogenie_users.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_admin_menu.xml" value="0.15680473372781065" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_exit.xml" value="0.2" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_glavnay_.xml" value="0.152" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_izbrannoe_.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_nastroiki_.xml" value="0.2" />
-        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_spiski.xml" value="0.4" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_perehod__admin__menu.xml" value="0.1" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_perehod__spisok_.xml" value="0.1" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/fragment_spiski.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/header.xml" value="0.2" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/maska_kino.xml" value="0.264" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/layout/name_ganr.xml" value="0.17777777777777778" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/menu/drawer_menu.xml" value="0.2" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/menu/drawer_menu_admin.xml" value="0.228125" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
