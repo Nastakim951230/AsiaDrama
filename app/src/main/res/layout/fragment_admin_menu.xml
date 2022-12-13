@@ -57,9 +57,9 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/text"
-                android:drawableLeft="@drawable/add_personal"
+                android:drawableLeft="@drawable/add_admin"
                 android:fontFamily="@font/rubik_light"
-                android:text="Добавить админа"
+                android:text="Список админов"
                 app:cornerRadius="15dp" />
 
             <Button

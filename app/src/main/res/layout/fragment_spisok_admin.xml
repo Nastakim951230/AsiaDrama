@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.SpisokAdmin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/Dark_Blue_background">
+
+            <ImageButton
+                android:id="@+id/NextMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:backgroundTint="@color/Dark_Blue_background"
+                android:src="@drawable/next" />
+
+            <ImageButton
+                android:id="@+id/Admin_add"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:backgroundTint="@color/Dark_Blue_background"
+                android:foregroundGravity="right"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_personal"></ImageButton>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/ListAdmin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</FrameLayout>

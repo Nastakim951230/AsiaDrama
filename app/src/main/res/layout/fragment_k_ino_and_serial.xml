@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.KInoAndSerial">
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+    android:background="@color/Blue_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <ImageButton
+          android:id="@+id/banner"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:adjustViewBounds="true"
+          android:src="@drawable/picture"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/Title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="NameKino"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+          android:textColor="@color/text"
+          app:layout_constraintTop_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+  </ScrollView>
+</FrameLayout>

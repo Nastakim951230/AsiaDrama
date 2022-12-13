@@ -14,10 +14,10 @@ import com.example.asia.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Add_Admin#newInstance} factory method to
+ * Use the {@link SpisokAdmin#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Add_Admin extends Fragment {
+public class SpisokAdmin extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,8 +27,8 @@ public class Add_Admin extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    ImageButton next;
-    public Add_Admin() {
+    ImageButton next , add;
+    public SpisokAdmin() {
         // Required empty public constructor
     }
 
@@ -38,11 +38,11 @@ public class Add_Admin extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Add_Admin.
+     * @return A new instance of fragment SpisokAdmin.
      */
     // TODO: Rename and change types and number of parameters
-    public static Add_Admin newInstance(String param1, String param2) {
-        Add_Admin fragment = new Add_Admin();
+    public static SpisokAdmin newInstance(String param1, String param2) {
+        SpisokAdmin fragment = new SpisokAdmin();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -58,18 +58,28 @@ public class Add_Admin extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    ;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View inflatedView = inflater.inflate(R.layout.fragment_add__admin, container, false);
-        next = (ImageButton) inflatedView.findViewById(R.id.NextMenuAdminAdmin);
+        View inflatedView = inflater.inflate(R.layout.fragment_spisok_admin, container, false);
+        add = (ImageButton) inflatedView.findViewById(R.id.Admin_add);
+        next = (ImageButton) inflatedView.findViewById(R.id.NextMenu);
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                AdminMenu fragment = new AdminMenu();
+                ft.replace(R.id.containerAdmin, fragment);
+                ft.commit();
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                SpisokAdmin fragment = new SpisokAdmin();
+                Add_Admin fragment = new Add_Admin();
                 ft.replace(R.id.containerAdmin, fragment);
                 ft.commit();
             }

@@ -86,7 +86,7 @@ public class AdminMenu extends Fragment {
             @Override
             public void onClick(View view) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
-                Add_Admin fragment = new Add_Admin();
+                SpisokAdmin fragment = new SpisokAdmin();
                 ft.replace(R.id.containerAdmin, fragment);
                 ft.commit();
             }
