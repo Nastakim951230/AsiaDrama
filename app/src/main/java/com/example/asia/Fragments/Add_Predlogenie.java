@@ -76,6 +76,7 @@ ImageButton next;
                 ft.commit();
             }
         });
+
         return inflatedView;
 
     }
