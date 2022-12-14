@@ -24,15 +24,106 @@
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
-
       <TextView
-          android:id="@+id/Title"
+          android:id="@+id/title"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="NameKino"
+          android:text="Название кино"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
           android:textColor="@color/text"
-          app:layout_constraintTop_toBottomOf="parent" />
+          app:layout_constraintEnd_toStartOf="@+id/poster"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banner"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constrainedWidth="true"
+          android:layout_marginStart="16dp"
+          app:layout_goneMarginEnd="16dp"
+
+
+          />
+
+      <ImageView
+        android:id="@+id/poster"
+          android:layout_width="100dp"
+          android:layout_height="wrap_content"
+          android:adjustViewBounds="true"
+          android:src="@drawable/picture"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banner"
+
+          />
+      <TextView
+          android:id="@+id/countri_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+          android:text="Страна:"
+          app:layout_constraintTop_toBottomOf="@+id/title"
+          app:layout_constraintStart_toStartOf="parent"
+          android:layout_marginStart="16dp"
+          android:textColor="@color/text"
+          />
+      <TextView
+        android:id="@+id/countri"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+          app:layout_constrainedWidth="true"
+          app:layout_constraintBaseline_toBaselineOf="@+id/countri_text"
+          app:layout_constraintEnd_toStartOf="@+id/poster"
+          app:layout_constraintHorizontal_bias="0"
+          app:layout_constraintStart_toEndOf="@+id/countri_text"
+          android:textColor="@color/text"
+          android:text="Страна"
+          />
+      <TextView
+          android:id="@+id/yaer_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+          android:text="Год:"
+          app:layout_constraintTop_toBottomOf="@+id/countri_text"
+          app:layout_constraintStart_toStartOf="parent"
+          android:layout_marginStart="16dp"
+          android:textColor="@color/text"
+          />
+      <TextView
+          android:id="@+id/year"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+          app:layout_constrainedWidth="true"
+          app:layout_constraintBaseline_toBaselineOf="@+id/yaer_text"
+          app:layout_constraintEnd_toStartOf="@+id/poster"
+          app:layout_constraintHorizontal_bias="0"
+          app:layout_constraintStart_toEndOf="@+id/yaer_text"
+          android:textColor="@color/text"
+          android:text="год"
+          />
+      <TextView
+          android:id="@+id/time_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+          android:text="Время:"
+          app:layout_constraintTop_toBottomOf="@+id/yaer_text"
+          app:layout_constraintStart_toStartOf="parent"
+          android:layout_marginStart="16dp"
+          android:textColor="@color/text"
+          />
+      <TextView
+          android:id="@+id/time"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+          app:layout_constrainedWidth="true"
+          app:layout_constraintBaseline_toBaselineOf="@+id/time_text"
+          app:layout_constraintEnd_toStartOf="@+id/poster"
+          app:layout_constraintHorizontal_bias="0"
+          app:layout_constraintStart_toEndOf="@+id/time_text"
+          android:textColor="@color/text"
+          android:text="время"
+          />
     </androidx.constraintlayout.widget.ConstraintLayout>
   </ScrollView>
 </FrameLayout>
