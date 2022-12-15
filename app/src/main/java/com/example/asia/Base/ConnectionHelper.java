@@ -13,6 +13,7 @@ public class ConnectionHelper {
     @SuppressLint("NewApi")
     public Connection connectionClass()
     {
+
         ip ="ngknn.ru";
         dataBase ="AsiaDrama_Trifonova";
         userPassword="12357";
