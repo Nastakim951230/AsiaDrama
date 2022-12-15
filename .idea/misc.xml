@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Tr/app/src/main/res/drawable-anydpi/ic_action_menu.xml" value="0.1" />
+        <entry key="..\:/Tr/app/src/main/res/drawable-anydpi/ic_action_settings.xml" value="0.1" />
+        <entry key="..\:/Tr/app/src/main/res/drawable-anydpi/ic_action_turned.xml" value="0.1" />
+        <entry key="..\:/Tr/app/src/main/res/menu/drawer_menu.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable-anydpi/keyPassword.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable/style_fon_kino.xml" value="0.232" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/drawable/style_fona.xml" value="0.1" />
