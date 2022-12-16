@@ -5,77 +5,100 @@ import android.os.Parcelable;
 
 public class MaskaKino implements Parcelable {
 
-    private int IdKinoAndSerial;
+    private int Id;
     private String Name;
-    private  int YearKinoAndSerial;
-    private String PhotoKinoAndSerial;
-    private String OsnovnoeGanr;
+    private String Country;
+    private  int Yaer;
+    private String Time;
+    private String Okino;
+    private String PhotoKino;
+    private String Ganger;
 
 
-    public MaskaKino(int id, String name,  int yaer,  String photoKino, String ganger) {
-        IdKinoAndSerial = id;
+    public MaskaKino(int id, String name, String country, int yaer, String time, String okino, String photoKino, String ganger) {
+        Id = id;
         Name = name;
-
-        YearKinoAndSerial = yaer;
-
-        PhotoKinoAndSerial = photoKino;
-        OsnovnoeGanr = ganger;
+        Country = country;
+        Yaer = yaer;
+        Time = time;
+        Okino = okino;
+        PhotoKino = photoKino;
+        Ganger = ganger;
     }
 
     protected MaskaKino(Parcel in) {
-        IdKinoAndSerial = in.readInt();
+        Id = in.readInt();
         Name = in.readString();
-
-        YearKinoAndSerial = in.readInt();
-
-        PhotoKinoAndSerial = in.readString();
-        OsnovnoeGanr = in.readString();
+        Country = in.readString();
+        Yaer = in.readInt();
+        Time = in.readString();
+        Okino = in.readString();
+        PhotoKino = in.readString();
+        Ganger = in.readString();
     }
 
     public void setId(int id) {
-        IdKinoAndSerial = id;
+        Id = id;
     }
 
     public void setName(String name) {
         Name = name;
     }
 
-
-
-    public void setYaer(int yaer) {
-        YearKinoAndSerial = yaer;
+    public void setCountry(String country) {
+        Country = country;
     }
 
+    public void setYaer(int yaer) {
+        Yaer = yaer;
+    }
 
+    public void setTime(String time) {
+        Time = time;
+    }
+
+    public void setOkino(String okino) {
+        Okino = okino;
+    }
 
     public void setPhotoKino(String photoKino) {
-        PhotoKinoAndSerial = photoKino;
+        PhotoKino = photoKino;
     }
 
     public void setGanger(String ganger) {
-        OsnovnoeGanr = ganger;
+        Ganger = ganger;
     }
 
     public int getId() {
-        return IdKinoAndSerial;
+        return Id;
     }
 
     public String getName() {
         return Name;
     }
 
-
-    public int getYaer() {
-        return YearKinoAndSerial;
+    public String getCountry() {
+        return Country;
     }
 
+    public int getYaer() {
+        return Yaer;
+    }
+
+    public String getTime() {
+        return Time;
+    }
+
+    public String getOkino() {
+        return Okino;
+    }
 
     public String getPhotoKino() {
-        return PhotoKinoAndSerial;
+        return PhotoKino;
     }
 
     public String getGanger() {
-        return OsnovnoeGanr;
+        return Ganger;
     }
 
     public static final Creator<MaskaKino> CREATOR = new Creator<MaskaKino>() {
@@ -97,12 +120,13 @@ public class MaskaKino implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(IdKinoAndSerial);
+        parcel.writeInt(Id);
         parcel.writeString(Name);
-
-        parcel.writeInt(YearKinoAndSerial);
-
-        parcel.writeString(PhotoKinoAndSerial);
-        parcel.writeString(OsnovnoeGanr);
+        parcel.writeString(Country);
+        parcel.writeInt(Yaer);
+        parcel.writeString(Time);
+        parcel.writeString(Okino);
+        parcel.writeString(PhotoKino);
+        parcel.writeString(Ganger);
     }
 }

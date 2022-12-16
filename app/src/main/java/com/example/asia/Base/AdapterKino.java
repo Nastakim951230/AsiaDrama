@@ -81,7 +81,7 @@ public class AdapterKino extends BaseAdapter {
 
         MaskaKino mask=maskaKinoList.get(i);
         Name.setText(mask.getName());
-        Year.setText(mask.getYaer());
+        Year.setText(String.valueOf(mask.getYaer()));
         Ganr.setText(mask.getGanger());
         Image.setImageBitmap(getUserImage(mask.getPhotoKino()));
         return v;

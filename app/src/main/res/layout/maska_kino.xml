@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/Fon"
         android:layout_width="160dp"
-        android:layout_height="250dp"
+        android:layout_height="255dp"
         android:layout_margin="10dp"
         android:background="@drawable/style_fon_kino"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,22 +19,27 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/kinoImage"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="184dp"
                 android:scaleType="fitXY"
+                app:shapeAppearanceOverlay="@style/RoundedSquare"
                 android:src="@drawable/picture" />
 
             <TextView
                 android:id="@+id/NameKino"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="45dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="NameKino Namekino "
+                android:lines="2"
                 android:ellipsize="end"
-                android:singleLine="true"
+
+                android:text="oNameKino Name
+
+    Namekino NamekinoNamekinn"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"></TextView>
 
@@ -50,6 +55,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:text="1555"
+                    android:textColor="@color/black"
                     android:textSize="14sp"></TextView>
 
                 <TextView
@@ -59,6 +65,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:text="1555"
+                    android:textColor="@color/black"
                     android:textSize="14sp"></TextView>
             </LinearLayout>
 

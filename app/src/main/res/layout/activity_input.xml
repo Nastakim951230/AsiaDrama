@@ -42,7 +42,7 @@
                 <EditText
                     android:id="@+id/LoginInput"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="59dp"
                     android:layout_marginTop="20dp"
 
                     android:layout_marginBottom="15dp"
@@ -53,19 +53,34 @@
                     android:textColorHighlight="@color/high"
                     android:textColorHint="@color/high"></EditText>
 
-                <EditText
-                    android:id="@+id/PasswordInput"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/style"
-                    android:ems="10"
-                    android:hint="@string/password"
-                    android:inputType="textPassword"
-                    android:padding="9dp"
+                    android:layout_height="59dp"
+
                     android:textColor="@color/text"
+
                     android:textColorHighlight="@color/high"
-                    android:textColorHint="@color/high" />
+                    android:textColorHint="@color/high"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/text">
+
+                    <EditText
+                        android:id="@+id/PasswordInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="59dp"
+                        android:background="@drawable/style"
+                        android:ems="10"
+                        android:hint="@string/password"
+                        android:textColor="@color/text"
+                        android:inputType="textPassword"
+                        android:padding="9dp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <TextView
                     android:id="@+id/Vhod"

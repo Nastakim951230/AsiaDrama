@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.asia.Base.AdapterKino;
@@ -75,7 +76,7 @@ public class Glavnay_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_glavnay_, container, false);
-        ListView KinoList = view.findViewById(R.id.ListDrama);
+        GridView KinoList = view.findViewById(R.id.ListDrama);
         pAdapter = new AdapterKino(getActivity(), listKino);
         KinoList.setAdapter(pAdapter);
         gridView = view.findViewById(R.id.ListDrama);
@@ -86,7 +87,7 @@ public class Glavnay_Fragment extends Fragment {
 
 
 
-    ListView gridView;
+    GridView gridView;
     AdapterKino pAdapter;
 
 
@@ -95,7 +96,7 @@ public class Glavnay_Fragment extends Fragment {
         @Override
         protected String doInBackground(Void... voids) {
             try {
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/KinoAndSerials");
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/ТрифоноваАР/api/KinoAndSerials");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -123,14 +124,17 @@ public class Glavnay_Fragment extends Fragment {
                 for (int i = 0;i<tempArray.length();i++)
                 {
                     JSONObject productJson = tempArray.getJSONObject(i);
-                    MaskaKino tempKino = new MaskaKino(
+                    MaskaKino tempProduct = new MaskaKino(
                             productJson.getInt("IdKinoAndSerial"),
                             productJson.getString("Name"),
+                            productJson.getString("idCountry"),
                             productJson.getInt("YearKinoAndSerial"),
+                            productJson.getString("TimeKinoAndSerial"),
+                            productJson.getString("OKinoAndSerial"),
                             productJson.getString("PhotoKinoAndSerial"),
                             productJson.getString("OsnovnoeGanr")
                     );
-                    listKino.add(tempKino);
+                    listKino.add(tempProduct);
                     pAdapter.notifyDataSetInvalidated();
                 }
 
