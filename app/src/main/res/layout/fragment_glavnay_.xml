@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/Blue_background"
     tools:context=".Fragments.Glavnay_Fragment">
 
     <LinearLayout
@@ -24,13 +25,14 @@
                 android:layout_marginTop="0dp" />
         </RelativeLayout>
 
-        <GridView
-            android:id="@+id/GridDrama"
+        <ListView
+            android:id="@+id/ListDrama"
+
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:numColumns="2">
+            >
 
-        </GridView>
+        </ListView>
 
     </LinearLayout>
 

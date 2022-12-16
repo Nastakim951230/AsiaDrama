@@ -1,5 +1,6 @@
 package com.example.asia.Fragments;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,21 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.example.asia.Base.AdapterKino;
+import com.example.asia.Base.MaskaKino;
 import com.example.asia.R;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +39,7 @@ public class Glavnay_Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    private List<MaskaKino> listKino=new ArrayList<>();
     public Glavnay_Fragment() {
         // Required empty public constructor
     }
@@ -60,7 +74,72 @@ public class Glavnay_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_glavnay_, container, false);
+        View view = inflater.inflate(R.layout.fragment_glavnay_, container, false);
+        ListView KinoList = view.findViewById(R.id.ListDrama);
+        pAdapter = new AdapterKino(getActivity(), listKino);
+        KinoList.setAdapter(pAdapter);
+        gridView = view.findViewById(R.id.ListDrama);
+        new GetBeutifulPlace().execute();
+        return view;
+
     }
+
+
+
+    ListView gridView;
+    AdapterKino pAdapter;
+
+
+    private class GetBeutifulPlace extends AsyncTask<Void, Void, String> {
+
+        @Override
+        protected String doInBackground(Void... voids) {
+            try {
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/KinoAndSerials");
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                StringBuilder result = new StringBuilder();
+                String line = "";
+
+                while ((line = reader.readLine()) != null)
+                {
+                    result.append(line);
+                }
+                return result.toString();
+            }
+            catch (Exception exception)
+            {
+                return null;
+            }
+        }
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            try
+            {
+
+                JSONArray tempArray = new JSONArray(s);
+                for (int i = 0;i<tempArray.length();i++)
+                {
+                    JSONObject productJson = tempArray.getJSONObject(i);
+                    MaskaKino tempKino = new MaskaKino(
+                            productJson.getInt("IdKinoAndSerial"),
+                            productJson.getString("Name"),
+                            productJson.getInt("YearKinoAndSerial"),
+                            productJson.getString("PhotoKinoAndSerial"),
+                            productJson.getString("OsnovnoeGanr")
+                    );
+                    listKino.add(tempKino);
+                    pAdapter.notifyDataSetInvalidated();
+                }
+
+            }
+            catch (Exception ignored)
+            {
+
+            }
+        }
+    }
+
 }
