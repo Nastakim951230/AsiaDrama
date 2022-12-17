@@ -4,10 +4,12 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
@@ -80,6 +82,17 @@ public class Glavnay_Fragment extends Fragment {
         pAdapter = new AdapterKino(getActivity(), listKino);
         KinoList.setAdapter(pAdapter);
         gridView = view.findViewById(R.id.ListDrama);
+
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                int index=(int) id;
+                FragmentTransaction ft=getFragmentManager().beginTransaction();
+                KInoAndSerial frafment= new KInoAndSerial(index);
+                ft.replace(R.id.contenerGlavnay,frafment);
+                ft.commit();
+            }
+        });
         new GetBeutifulPlace().execute();
         return view;
 
