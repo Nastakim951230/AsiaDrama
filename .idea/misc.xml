@@ -45,10 +45,15 @@
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/drawable/style_fona.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/drawable/tool_bar_style.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/activity_input.xml" value="0.4" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/activity_main.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/activity_registrasua.xml" value="0.1" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/fragment_add__admin.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/fragment_glavnay_.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/fragment_izbrannoe_.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/fragment_k_ino_and_serial.xml" value="0.2" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/item_book.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/maska_kino.xml" value="0.264" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/layout/name_ganr.xml" value="0.21927083333333333" />
       </map>
     </option>
   </component>

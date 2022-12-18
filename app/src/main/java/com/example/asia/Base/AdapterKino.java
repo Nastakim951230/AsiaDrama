@@ -3,6 +3,7 @@ package com.example.asia.Base;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.asia.Fragments.Glavnay_Fragment;
 import com.example.asia.R;
 
 import java.io.InputStream;
@@ -26,7 +28,7 @@ public class AdapterKino extends BaseAdapter {
 
     public AdapterKino(Context nContext,List<MaskaKino> maskaKinoList)
     {
-        this.nContext=nContext;
+        this .nContext=nContext;
         this.maskaKinoList=maskaKinoList;
     }
     List<MaskaKino> maskaKinoList;

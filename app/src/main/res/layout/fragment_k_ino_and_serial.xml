@@ -14,6 +14,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+      <RelativeLayout
+          android:id="@+id/PodVverh"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:background="@color/Dark_Blue_background">
+
+        <ImageButton
+            android:id="@+id/NextGlavnay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:backgroundTint="@color/Dark_Blue_background"
+            android:src="@drawable/next" />
+      </RelativeLayout>
 
       <ImageButton
           android:id="@+id/banner"
@@ -23,13 +40,14 @@
           android:src="@drawable/picture"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent" />
+          app:layout_constraintTop_toBottomOf="@+id/PodVverh" />
 
       <TextView
           android:id="@+id/title"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="16dp"
+          android:layout_marginTop="10dp"
           android:text="Название кино"
           android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
           android:textColor="@color/text"
@@ -38,21 +56,21 @@
           app:layout_constraintHorizontal_bias="0.0"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/banner"
-          app:layout_goneMarginEnd="16dp"
 
 
-          />
+          app:layout_goneMarginEnd="16dp" />
 
       <ImageView
           android:id="@+id/poster"
           android:layout_width="100dp"
           android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:layout_marginEnd="10dp"
           android:adjustViewBounds="true"
           android:src="@drawable/picture"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/banner"
 
-          />
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/banner" />
 
       <TextView
           android:id="@+id/countri_text"
@@ -140,11 +158,13 @@
           app:layout_constraintHorizontal_bias="0"
           app:layout_constraintStart_toEndOf="@+id/time_text" />
 
-      <androidx.recyclerview.widget.RecyclerView
+      <GridView
           android:id="@+id/ganr"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_marginTop="8dp"
+          android:gravity="center"
+          android:numColumns="4"
           android:backgroundTint="@color/text"
           app:layout_constraintTop_toBottomOf="@+id/time_text" />
 

@@ -82,11 +82,10 @@ public class Glavnay_Fragment extends Fragment {
         pAdapter = new AdapterKino(getActivity(), listKino);
         KinoList.setAdapter(pAdapter);
         gridView = view.findViewById(R.id.ListDrama);
-
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                int index=(int) id;
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                int index=(int) l;
                 FragmentTransaction ft=getFragmentManager().beginTransaction();
                 KInoAndSerial frafment= new KInoAndSerial(index);
                 ft.replace(R.id.contenerGlavnay,frafment);
