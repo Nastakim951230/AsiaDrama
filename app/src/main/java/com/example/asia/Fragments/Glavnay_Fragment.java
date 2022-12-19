@@ -84,8 +84,8 @@ public class Glavnay_Fragment extends Fragment {
         gridView = view.findViewById(R.id.ListDrama);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int index=(int) l;
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
+                int index=(int) id;
                 FragmentTransaction ft=getFragmentManager().beginTransaction();
                 KInoAndSerial frafment= new KInoAndSerial(index);
                 ft.replace(R.id.contenerGlavnay,frafment);
@@ -108,7 +108,7 @@ public class Glavnay_Fragment extends Fragment {
         @Override
         protected String doInBackground(Void... voids) {
             try {
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/ТрифоноваАР/api/KinoAndSerials");
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/KinoAndSerials");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -139,12 +139,9 @@ public class Glavnay_Fragment extends Fragment {
                     MaskaKino tempProduct = new MaskaKino(
                             productJson.getInt("IdKinoAndSerial"),
                             productJson.getString("Name"),
-                            productJson.getString("idCountry"),
                             productJson.getInt("YearKinoAndSerial"),
-                            productJson.getString("TimeKinoAndSerial"),
-                            productJson.getString("OKinoAndSerial"),
-                            productJson.getString("PhotoKinoAndSerial"),
-                            productJson.getString("OsnovnoeGanr")
+                            productJson.getString("PhotoKinoAndSerial")
+
                     );
                     listKino.add(tempProduct);
                     pAdapter.notifyDataSetInvalidated();
@@ -156,6 +153,8 @@ public class Glavnay_Fragment extends Fragment {
 
             }
         }
+
+
     }
 
 }
