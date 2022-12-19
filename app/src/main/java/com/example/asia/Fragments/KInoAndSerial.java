@@ -57,8 +57,8 @@ public class KInoAndSerial extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    ImageView Banner,Poster;
-    TextView Title, Country, Yaer, Time;
+    ImageView Banner;
+    TextView Title, Country, Yaer, Time,Okino;
     EditText pometki;
     ImageButton next;
     private List<MaskaGanre> listGanre=new ArrayList<>();
@@ -85,21 +85,21 @@ public class KInoAndSerial extends Fragment {
 
         Banner=view.findViewById(R.id.banner);
 
-        Poster=view.findViewById(R.id.poster);
+
         Title=view.findViewById(R.id.title);
 
         Country=view.findViewById(R.id.countri);
         Yaer=view.findViewById(R.id.year);
         Time=view.findViewById(R.id.time);
+        Okino=view.findViewById(R.id.short_descriptions);
 
-
-    /* GridView ListGanr = view.findViewById(R.id.ganr);
+   /*  GridView ListGanr = view.findViewById(R.id.ganr);
         AdapterGanr = new AdapterGanre(getActivity(), listGanre);
         ListGanr.setAdapter(AdapterGanr);
         recyclerView = view.findViewById(R.id.ganr);
-        new GetBeutifulPlace().execute();
+        new GetBeutifulPlace().execute();*/
 
-     */
+
 
         next = (ImageButton) view.findViewById(R.id.NextGlavnay);
 
@@ -124,7 +124,7 @@ public class KInoAndSerial extends Fragment {
         @Override
         protected String doInBackground(Void... voids) {
             try {
-                URL url = new URL("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/KinoAndGenres?idKino= "+ID);
+                URL url = new URL("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/KinoAndGenres?idKino="+ID);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -173,7 +173,7 @@ public class KInoAndSerial extends Fragment {
     {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/")
+                .baseUrl("https://ngknn.ru:5001/NGKNN/ТрифоноваАР/api/KinoAndSerials/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
@@ -189,23 +189,26 @@ public class KInoAndSerial extends Fragment {
                     return;
                 }
                 Title.setText(response.body().getName());
-                if(response.body().getPhotoKino() == null)
+                Okino.setText(response.body().getOKinoAndSerial());
+                Time.setText(response.body().getTimeKinoAndSerial());
+                Yaer.setText(String.valueOf(response.body().getYearKinoAndSerial()));
+
+
+                if(response.body().getPhotoKinoAndSerial() == null)
                 {
                     Banner.setImageResource(R.drawable.picture);
-                    Poster.setImageResource(R.drawable.picture);
+
                 }
                 else
                 {
-                    Bitmap bitmap = StringToBitMap(response.body().getPhotoKino());
+                    Bitmap bitmap = StringToBitMap(response.body().getPhotoKinoAndSerial());
                     Banner.setImageBitmap(bitmap);
-                    Poster.setImageBitmap(bitmap);
+
                 }
-                Bitmap bitmap = StringToBitMap(response.body().getPhotoKino());
-                Banner.setImageBitmap(bitmap);
-                Poster.setImageBitmap(bitmap);
-                callGetCountry(response.body().getCountry());
-                Yaer.setText(String.valueOf(response.body().getYaer()));
-                Time.setText(String.valueOf(response.body().getTime()));
+
+
+
+                callGetCountry(response.body().getIdCountry());
             }
             @Override
             public void onFailure(Call<DataModalKino> call, Throwable t) {
@@ -228,7 +231,7 @@ public class KInoAndSerial extends Fragment {
     {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/")
+                .baseUrl("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/Countries/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
@@ -239,14 +242,14 @@ public class KInoAndSerial extends Fragment {
 
                 if(!response.isSuccessful())
                 {
-                    Toast.makeText(getActivity(), "При выводе типа достопримечательности возникла ошибка", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "При выводе страны возникла ошибка", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Country.setText(String.valueOf(response.body().getCountries()));
             }
             @Override
             public void onFailure(Call<CountryModel> call, Throwable t) {
-                Toast.makeText(getActivity(), "При выводе типа достопримечательности возникла ошибка: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "При выводе страны возникла ошибка: " + t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });

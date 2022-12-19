@@ -5,9 +5,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface RetrofitAPI {
-    @GET("KinoAndSerials/{id}")
+    @GET("{id}")
     Call<DataModalKino> getDATAKinoAndSerial(@Query("id") int id);
 
-    @GET("Countries/{id}")
+    @GET("{id}")
     Call<CountryModel> getCountries(@Query("id") int id);
 }

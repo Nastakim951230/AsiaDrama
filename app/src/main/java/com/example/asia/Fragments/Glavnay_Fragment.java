@@ -139,8 +139,12 @@ public class Glavnay_Fragment extends Fragment {
                     MaskaKino tempProduct = new MaskaKino(
                             productJson.getInt("IdKinoAndSerial"),
                             productJson.getString("Name"),
+                            productJson.getString("idCountry"),
                             productJson.getInt("YearKinoAndSerial"),
-                            productJson.getString("PhotoKinoAndSerial")
+                            productJson.getString("TimeKinoAndSerial"),
+                            productJson.getString("OKinoAndSerial"),
+                            productJson.getString("PhotoKinoAndSerial"),
+                            productJson.getString("OsnovnoeGanr")
 
                     );
                     listKino.add(tempProduct);

@@ -2,76 +2,76 @@ package com.example.asia.Base;
 
 public class DataModalKino {
     private String Name;
-    private int Country;
-    private  int Yaer;
-    private String Time;
-    private String Okino;
-    private String PhotoKino;
-    private int Ganger;
+    private int idCountry;
+    private  int YearKinoAndSerial;
+    private String TimeKinoAndSerial;
+    private String OKinoAndSerial;
+    private String PhotoKinoAndSerial;
+    private int OsnovnoeGanr;
 
-    public DataModalKino(String name, int country, int yaer, String time, String okino, String photoKino, int ganger) {
+    public DataModalKino(String name, int idCountry, int yearKinoAndSerial, String timeKinoAndSerial, String OKinoAndSerial, String photoKinoAndSerial, int osnovnoeGanr) {
         Name = name;
-        Country = country;
-        Yaer = yaer;
-        Time = time;
-        Okino = okino;
-        PhotoKino = photoKino;
-        Ganger = ganger;
+        this.idCountry = idCountry;
+        YearKinoAndSerial = yearKinoAndSerial;
+        TimeKinoAndSerial = timeKinoAndSerial;
+        this.OKinoAndSerial = OKinoAndSerial;
+        PhotoKinoAndSerial = photoKinoAndSerial;
+        OsnovnoeGanr = osnovnoeGanr;
     }
 
     public String getName() {
         return Name;
     }
 
-    public int getCountry() {
-        return Country;
+    public int getIdCountry() {
+        return idCountry;
     }
 
-    public int getYaer() {
-        return Yaer;
+    public int getYearKinoAndSerial() {
+        return YearKinoAndSerial;
     }
 
-    public String getTime() {
-        return Time;
+    public String getTimeKinoAndSerial() {
+        return TimeKinoAndSerial;
     }
 
-    public String getOkino() {
-        return Okino;
+    public String getOKinoAndSerial() {
+        return OKinoAndSerial;
     }
 
-    public String getPhotoKino() {
-        return PhotoKino;
+    public String getPhotoKinoAndSerial() {
+        return PhotoKinoAndSerial;
     }
 
-    public int getGanger() {
-        return Ganger;
+    public int getOsnovnoeGanr() {
+        return OsnovnoeGanr;
     }
 
     public void setName(String name) {
         Name = name;
     }
 
-    public void setCountry(int country) {
-        Country = country;
+    public void setIdCountry(int idCountry) {
+        this.idCountry = idCountry;
     }
 
-    public void setYaer(int yaer) {
-        Yaer = yaer;
+    public void setYearKinoAndSerial(int yearKinoAndSerial) {
+        YearKinoAndSerial = yearKinoAndSerial;
     }
 
-    public void setTime(String time) {
-        Time = time;
+    public void setTimeKinoAndSerial(String timeKinoAndSerial) {
+        TimeKinoAndSerial = timeKinoAndSerial;
     }
 
-    public void setOkino(String okino) {
-        Okino = okino;
+    public void setOKinoAndSerial(String OKinoAndSerial) {
+        this.OKinoAndSerial = OKinoAndSerial;
     }
 
-    public void setPhotoKino(String photoKino) {
-        PhotoKino = photoKino;
+    public void setPhotoKinoAndSerial(String photoKinoAndSerial) {
+        PhotoKinoAndSerial = photoKinoAndSerial;
     }
 
-    public void setGanger(int ganger) {
-        Ganger = ganger;
+    public void setOsnovnoeGanr(int osnovnoeGanr) {
+        OsnovnoeGanr = osnovnoeGanr;
     }
 }

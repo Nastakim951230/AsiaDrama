@@ -82,12 +82,12 @@ public class AdapterKino extends BaseAdapter {
         ImageView Image=v.findViewById(R.id.kinoImage);
         TextView Name=v.findViewById(R.id.NameKino);
         TextView Year=v.findViewById(R.id.YearKino);
-
+        TextView Ganr=v.findViewById(R.id.GanrKino);
 
         MaskaKino mask=maskaKinoList.get(i);
         Name.setText(mask.getName());
         Year.setText(String.valueOf(mask.getYaer()));
-
+        Ganr.setText(mask.getGanger());
         Image.setImageBitmap(getUserImage(mask.getPhotoKino()));
 
 

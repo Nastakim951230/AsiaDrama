@@ -2,18 +2,18 @@ package com.example.asia.Base;
 
 public class CountryModel {
 
-    private String country;
+    private String NameCountry;
 
-    public CountryModel(String type_locality)
+    public CountryModel(String NameCountry)
     {
-        this.country = country;
+        this.NameCountry = NameCountry;
     }
-    public void setCountries(String type_locality)
+    public void setCountries(String NameCountry)
     {
-        this.country = country;
+        this.NameCountry = NameCountry;
     }
     public String getCountries()
     {
-        return  country;
+        return  NameCountry;
     }
 }
