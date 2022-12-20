@@ -4,14 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.telecom.Call;
+
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.asia.Base.ModelUsers;
 import com.example.asia.Base.RetrofitAPI;
+import com.example.asia.Base.UsersModel;
 
+import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -33,7 +35,11 @@ public class Registrasua extends AppCompatActivity {
 
 
     }
-/*
+    public void perehod(View v)
+    {
+        Intent intent = new Intent( this, Input.class);
+        startActivity(intent);
+    }
     public void nextRegistrarion(View v)
     {
         String login = String.valueOf(etLogin.getText());
@@ -56,11 +62,11 @@ public class Registrasua extends AppCompatActivity {
         }
         else
         {
-            callRegistration();
+            postDataUser(nickname,login,password);
         }
     }
 
-    private void callRegistration()
+   private void callRegistration()
     {
 
         String login = String.valueOf(etLogin.getText());
@@ -72,11 +78,12 @@ public class Registrasua extends AppCompatActivity {
                 .build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
         Call<Boolean> call = retrofitAPI.examinationRegistration(login);
+
         call.enqueue(new Callback<Boolean>() {
             @Override
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(Registrasua.this, "При регистрации возникла ошибка", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registrasua.this, "При регистрации возникла ошибка 1", Toast.LENGTH_SHORT).show();
 
                     return;
                 }
@@ -93,10 +100,12 @@ public class Registrasua extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Boolean> call, Throwable t) {
-                Toast.makeText(Registrasua.this, "При регистрации возникла ошибка: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(Registrasua.this, "При регистрации возникла ошибка: 2" + t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
+
+
     }
     private void postDataUser(String nickname,String login, String password) {
 
@@ -106,28 +115,29 @@ public class Registrasua extends AppCompatActivity {
                 .build();
         RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
 
-        ModelUsers modal = new ModelUsers(nickname, login, password, null, 2);
+        UsersModel modal = new UsersModel(nickname, login, password, null, 2);
 
-        retrofit2.Call<ModelUsers> call = retrofitAPI.createUser(modal);
+        Call<UsersModel> call = retrofitAPI.createUser(modal);
 
-        call.enqueue(new Callback<ModelUsers>() {
+        call.enqueue(new Callback<UsersModel>() {
             @Override
-            public void onResponse(Call<ModelUsers> call, Response<ModelUsers> response) {
+            public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
                 if(!response.isSuccessful())
                 {
-                    Toast.makeText(Registrasua.this, "При регистрации пользователя возникла ошибка", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registrasua.this, "При регистрации пользователя возникла ошибка 3", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 Toast.makeText(Registrasua.this, "Пользователь успешно зарегистрирован", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent( Registrasua.this, Input.class);
+                startActivity(intent);
 
-                Intent myIntent = new Intent(Registrasua.this, Input.class);
 
             }
             @Override
-            public void onFailure(retrofit2.Call<ModelUsers> call, Throwable t) {
-                Toast.makeText(Registrasua.this, "При регистрации пользователя возникла ошибка: " + t.getMessage(), Toast.LENGTH_LONG).show();
+            public void onFailure(Call<UsersModel> call, Throwable t) {
+                Toast.makeText(Registrasua.this, "При регистрации пользователя возникла ошибка: 4" + t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
-    }*/
+    }
 }

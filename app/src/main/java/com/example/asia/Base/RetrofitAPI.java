@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 public interface RetrofitAPI {
 
     @GET("Users")
-    Call<Integer> Login(@Query("Login") String login, @Query("Password") String password);
+    Call<ModelUsers> Login(@Query("Login") String login, @Query("Password") String password);
 
     @GET("{id}")
     Call<DataModalKino> getDATAKinoAndSerial(@Query("id") int id);
@@ -21,10 +21,12 @@ public interface RetrofitAPI {
     Call<Boolean> examinationRegistration(@Query("Login") String login);
 
     @POST("Users")
-    Call<ModelUsers> createUser(@Body ModelUsers modelUsers);
+    Call<UsersModel> createUser(@Body UsersModel modelUsers);
 
     @POST("Actors")
     Call<ModelActor> createPost(@Body ModelActor dataModal);
     @POST("Genres")
     Call<ModelGanr> createPost(@Body ModelGanr dataModal);
+    @GET ("Genres")
+    Call<ModelGanr> getGanr(@Body ModelGanr dataModal);
 }

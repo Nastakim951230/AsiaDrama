@@ -10,8 +10,11 @@ import android.widget.Toast;
 
 import com.example.asia.Base.ModelUsers;
 import com.example.asia.Base.RetrofitAPI;
+import com.example.asia.Base.UsersModel;
 
+import retrofit2.Callback;
 import retrofit2.Call;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -36,7 +39,7 @@ public class Input extends AppCompatActivity {
         Intent intent = new Intent( this, Navigate.class);
         startActivity(intent);
     }
-/*
+
     public void login(View v)
     {
         callLogin();
@@ -65,12 +68,12 @@ public class Input extends AppCompatActivity {
 
                 if(response.body() != null)
                 {
-                    if(response.body().getId_role() == 2)
+                    if(response.body().getRole() == 2)
                     {
                         Toast.makeText(Input.this, "Вы успешно авторизировались", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Input.this, Navigate.class);
                         Bundle b = new Bundle();
-                        b.putInt("key", response.body().getId_user());
+                        b.putInt("key", response.body().getIdUser());
                         intent.putExtras(b);
                         startActivity(intent);
                     }
@@ -94,5 +97,5 @@ public class Input extends AppCompatActivity {
 
             }
         });
-    }*/
+    }
 }

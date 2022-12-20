@@ -107,9 +107,38 @@
                 ></EditText>
 
             <Spinner
-                android:id="@+id/Actor_Predlogenie"
+                android:id="@+id/Actor_Predlogenie_Glav"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+
+                android:background="@drawable/style"
+                android:padding="9dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/high"
+                android:textColorHint="@color/high"
+                android:layout_marginBottom="15dp"
+                />
+            <Spinner
+                android:id="@+id/Actor_Predlogenie_Vtor"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+                android:background="@drawable/style"
+                android:padding="9dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:textColor="@color/text"
+                android:textColorHighlight="@color/high"
+                android:textColorHint="@color/high"
+                android:layout_marginBottom="15dp"
+                />
+            <Spinner
+                android:id="@+id/Actor_Predlogenie_Epizo"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
                 android:background="@drawable/style"
                 android:padding="9dp"
                 android:layout_marginLeft="30dp"

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 
 import com.example.asia.R;
 
@@ -28,7 +29,8 @@ public class Add_Predlogenie extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-ImageButton next;
+    Spinner ganr,country,glavnActor,VtorActor, EpizodActor;
+    ImageButton next;
     public Add_Predlogenie() {
         // Required empty public constructor
     }
