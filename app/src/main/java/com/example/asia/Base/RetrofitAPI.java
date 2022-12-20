@@ -22,4 +22,7 @@ public interface RetrofitAPI {
 
     @POST("Users")
     Call<ModelUsers> createUser(@Body ModelUsers modelUsers);
+
+    @POST("Actors")
+    Call<ModelActor> createPost(@Body ModelActor dataModal);
 }

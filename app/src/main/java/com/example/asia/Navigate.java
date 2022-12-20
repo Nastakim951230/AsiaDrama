@@ -37,8 +37,8 @@ public class Navigate extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigate);
-        Bundle arguments = getIntent().getExtras();
-        index = arguments.getInt("key");
+       /* Bundle arguments = getIntent().getExtras();
+        index = arguments.getInt("key");*/
 
         final DrawerLayout drawerLayout=findViewById(R.id.navigas);
 

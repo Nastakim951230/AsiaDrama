@@ -182,7 +182,7 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/short_descriptions" />
 
-      <androidx.recyclerview.widget.RecyclerView
+      <ListView
           android:id="@+id/actor"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
