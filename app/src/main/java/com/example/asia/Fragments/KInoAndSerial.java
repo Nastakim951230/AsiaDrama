@@ -7,7 +7,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -25,7 +24,6 @@ import com.example.asia.Base.AdapterKino;
 import com.example.asia.Base.CountryModel;
 import com.example.asia.Base.DataModalKino;
 import com.example.asia.Base.MaskaGanre;
-import com.example.asia.Base.MaskaKino;
 import com.example.asia.Base.RetrofitAPI;
 import com.example.asia.R;
 
@@ -93,16 +91,11 @@ public class KInoAndSerial extends Fragment {
         Time=view.findViewById(R.id.time);
         Okino=view.findViewById(R.id.short_descriptions);
 
-   /*  GridView ListGanr = view.findViewById(R.id.ganr);
+     GridView ListGanr = view.findViewById(R.id.ganr);
         AdapterGanr = new AdapterGanre(getActivity(), listGanre);
         ListGanr.setAdapter(AdapterGanr);
-        recyclerView = view.findViewById(R.id.ganr);
-        new GetBeutifulPlace().execute();*/
-
-
 
         next = (ImageButton) view.findViewById(R.id.NextGlavnay);
-
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -113,13 +106,14 @@ public class KInoAndSerial extends Fragment {
             }
         });
         callGetKinoAndSerial();
+        new GetGanr().execute();
         return view;
     }
 
-    GridView recyclerView;
+
     AdapterGanre AdapterGanr;
 
-    private class GetBeutifulPlace extends AsyncTask<Void, Void, String> {
+    private class GetGanr extends AsyncTask<Void, Void, String> {
 
         @Override
         protected String doInBackground(Void... voids) {
@@ -152,13 +146,13 @@ public class KInoAndSerial extends Fragment {
                 for (int i = 0;i<tempArray.length();i++)
                 {
                     JSONObject productJson = tempArray.getJSONObject(i);
-                    MaskaGanre tempProduct = new MaskaGanre(
+                    MaskaGanre Ganr = new MaskaGanre(
+
                             productJson.getInt("IdKinoAndGenre"),
                             productJson.getInt("idKino"),
-                            productJson.getString("idGenre")
-
+                            productJson.getString( "idGenre")
                     );
-                    listGanre.add(tempProduct);
+                    listGanre.add(Ganr);
                     AdapterGanr.notifyDataSetInvalidated();
                 }
 
@@ -254,4 +248,5 @@ public class KInoAndSerial extends Fragment {
             }
         });
     }
+  
 }

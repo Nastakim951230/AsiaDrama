@@ -4,24 +4,24 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class MaskaGanre implements Parcelable {
-    private int ID;
+    private int IdKinoAndGenre;
     private  int idKino;
-    private  String  Genres;
+    private  String  idGenre;
 
     protected MaskaGanre(Parcel in) {
-        ID = in.readInt();
+        IdKinoAndGenre = in.readInt();
         idKino = in.readInt();
-        Genres = in.readString();
+        idGenre = in.readString();
     }
 
-    public MaskaGanre(int ID, int idKino, String genres) {
-        this.ID = ID;
+    public MaskaGanre(int IdKinoAndGenre, int idKino, String idGenre) {
+        this.IdKinoAndGenre = IdKinoAndGenre;
         this.idKino = idKino;
-        Genres = genres;
+        this.idGenre = idGenre;
     }
 
     public int getID() {
-        return ID;
+        return IdKinoAndGenre;
     }
 
     public int getIdKino() {
@@ -29,11 +29,11 @@ public class MaskaGanre implements Parcelable {
     }
 
     public String getGenres() {
-        return Genres;
+        return idGenre;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setID(int IdKinoAndGenre) {
+        this.IdKinoAndGenre = IdKinoAndGenre;
     }
 
     public void setIdKino(int idKino) {
@@ -41,7 +41,7 @@ public class MaskaGanre implements Parcelable {
     }
 
     public void setGenres(String genres) {
-        Genres = genres;
+        idGenre = genres;
     }
 
     public static final Creator<MaskaGanre> CREATOR = new Creator<MaskaGanre>() {
@@ -63,8 +63,8 @@ public class MaskaGanre implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(ID);
+        parcel.writeInt(IdKinoAndGenre);
         parcel.writeInt(idKino);
-        parcel.writeString(Genres);
+        parcel.writeString(idGenre);
     }
 }

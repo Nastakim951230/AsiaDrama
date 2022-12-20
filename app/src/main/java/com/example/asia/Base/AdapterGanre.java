@@ -15,26 +15,26 @@ public class AdapterGanre extends BaseAdapter {
 
     private Context nContext;
 
-    public AdapterGanre(Context nContext, List<MaskaGanre> maskaGenres)
+    public AdapterGanre(Context nContext, List<MaskaGanre> maskaGenresList)
     {
         this .nContext=nContext;
-        this.maskaGenres=maskaGenres;
+        this.maskaGenresList=maskaGenresList;
     }
-    List<MaskaGanre> maskaGenres;
+    List<MaskaGanre> maskaGenresList;
 
     @Override
     public int getCount() {
-        return maskaGenres.size();
+        return maskaGenresList.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return maskaGenres.get(i);
+        return maskaGenresList.get(i);
     }
 
     @Override
     public long getItemId(int i) {
-        return maskaGenres.get(i).getID();
+        return maskaGenresList.get(i).getID();
     }
 
     @Override
@@ -42,9 +42,9 @@ public class AdapterGanre extends BaseAdapter {
         View v=View.inflate(nContext, R.layout.item_book, null);
 
         TextView Name=v.findViewById(R.id.GanrNmeKino);
-        MaskaGanre mask=maskaGenres.get(i);
+        MaskaGanre mask=maskaGenresList.get(i);
         Name.setText(mask.getGenres());
 
-        return null;
+        return v;
     }
 }
