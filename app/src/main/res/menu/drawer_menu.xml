@@ -17,6 +17,7 @@
             android:id="@+id/admin_menu"
             android:visible="true"
             android:icon="@drawable/add_admin"
+
             android:title="Меню админа"
             />
         <item

@@ -3,14 +3,24 @@ package com.example.asia;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.asia.Base.MaskaKino;
 import com.example.asia.Base.ModelUsers;
 import com.example.asia.Base.RetrofitAPI;
 import com.example.asia.Base.UsersModel;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import retrofit2.Callback;
 import retrofit2.Call;
@@ -45,6 +55,8 @@ public class Input extends AppCompatActivity {
         callLogin();
     }
 
+
+
     private void callLogin()
     {
 
@@ -72,9 +84,11 @@ public class Input extends AppCompatActivity {
                     {
                         Toast.makeText(Input.this, "Вы успешно авторизировались", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Input.this, Navigate.class);
-                        Bundle b = new Bundle();
-                        b.putInt("key", response.body().getIdUser());
-                        intent.putExtras(b);
+
+                        intent.putExtra("key", response.body().getIdUser());
+                        intent.putExtra("name", response.body().getNickname());
+                        intent.putExtra("role", response.body().getRole());
+                        intent.putExtra("photo", response.body().getPhotoUsers());
                         startActivity(intent);
                     }
                     else
@@ -98,4 +112,5 @@ public class Input extends AppCompatActivity {
             }
         });
     }
+
 }

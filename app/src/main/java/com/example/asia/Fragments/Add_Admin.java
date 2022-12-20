@@ -9,7 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.asia.Base.RetrofitAPI;
@@ -40,6 +43,9 @@ public class Add_Admin extends Fragment {
     private String mParam1;
     private String mParam2;
     ImageButton next;
+    EditText etPassword, etLogin, etNickname;
+    ImageView photo;
+    Button addAdmin;
     public Add_Admin() {
         // Required empty public constructor
     }
@@ -75,6 +81,20 @@ public class Add_Admin extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.fragment_add__admin, container, false);
+
+        photo=inflatedView.findViewById(R.id.Image_Admin);
+        etLogin=inflatedView.findViewById(R.id.Login_Admin);
+        etNickname=inflatedView.findViewById(R.id.Name_Admin);
+        etPassword=inflatedView.findViewById(R.id.Password_Admin);
+
+        addAdmin=inflatedView.findViewById(R.id.btnAddAdmin);
+        addAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nextRegistrarion();
+            }
+        });
+
         next = (ImageButton) inflatedView.findViewById(R.id.NextMenuAdminAdmin);
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -89,7 +109,33 @@ public class Add_Admin extends Fragment {
         return inflatedView;
 
     }
-    private void postDataUser(String nickname,String login, String password) {
+
+    public void nextRegistrarion()
+    {
+        String login = String.valueOf(etLogin.getText());
+        String password = String.valueOf(etPassword.getText());
+        String nickname = String.valueOf(etNickname.getText());
+        if(login.replaceAll("\\s+", " ").equals(""))
+        {
+            Toast.makeText(getActivity(),"Логин не может быть пустым", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(password.replaceAll("\\s+", " ").equals(""))
+        {
+            Toast.makeText(getActivity(),"Пароль не может быть пустым", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(nickname.replaceAll("\\s+", " ").equals(""))
+        {
+            Toast.makeText(getActivity(), "Nickname не может быть пустым", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else
+        {
+            postDataUser(nickname,login,password);
+        }
+    }
+   private void postDataUser(String nickname,String login, String password) {
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/")
@@ -109,15 +155,15 @@ public class Add_Admin extends Fragment {
                     Toast.makeText(getActivity(), "При регистрации пользователя возникла ошибка 3", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(Registrasua.this, "Пользователь успешно зарегистрирован", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent( Registrasua.this, Input.class);
+                Toast.makeText(getActivity(), "Пользователь успешно зарегистрирован", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent( getActivity(), Input.class);
                 startActivity(intent);
 
 
             }
             @Override
             public void onFailure(Call<UsersModel> call, Throwable t) {
-                Toast.makeText(Registrasua.this, "При регистрации пользователя возникла ошибка: 4" + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "При регистрации пользователя возникла ошибка: 4" + t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
