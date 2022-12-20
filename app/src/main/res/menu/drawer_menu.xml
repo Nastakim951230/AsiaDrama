@@ -6,6 +6,11 @@
             android:icon="@drawable/ic_action_name"
             android:title="Главная" />
         <item
+            android:id="@+id/nav_nastroika"
+            android:icon="@drawable/personal"
+            android:title="Пользователь" />
+
+        <item
             android:id="@+id/nav_izbrannoe"
             android:icon="@drawable/ic_action_izbran"
             android:title="Избранное" />
@@ -15,15 +20,12 @@
             android:title="Предложение" />
         <item
             android:id="@+id/admin_menu"
-            android:visible="true"
+            android:visible="false"
             android:icon="@drawable/add_admin"
 
             android:title="Меню админа"
             />
-        <item
-            android:id="@+id/nav_nastroika"
-            android:icon="@drawable/ic_action_settings"
-            android:title="Настройка пользователя" />
+
 
     </group>
     <item android:title="">

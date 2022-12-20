@@ -36,11 +36,11 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     >
-                    <GridView
-                        android:id="@+id/Smotret"
+                    <FrameLayout
+                        android:id="@+id/tabHostPerehod"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:numColumns="2"></GridView>
+                        android:layout_height="match_parent"></FrameLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -48,11 +48,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <GridView
-                        android:id="@+id/Zaplanirovano"
+                    <FrameLayout
+                        android:id="@+id/tabHostPerehodzap"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:numColumns="2"></GridView>
+                        android:layout_height="match_parent"></FrameLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -60,33 +59,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <GridView
-                        android:id="@+id/Prosmotreno"
+                    <FrameLayout
+                        android:id="@+id/tabHostPerehodPros"
                         android:layout_width="match_parent"
-                        android:numColumns="2"
-                        android:layout_height="match_parent"></GridView>
+                        android:layout_height="match_parent"></FrameLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/linearLayout4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <GridView
-                        android:id="@+id/Otlogenno"
+                    <FrameLayout
+                        android:id="@+id/tabHostPerehodOtloge"
                         android:layout_width="match_parent"
-                        android:numColumns="2"
-                        android:layout_height="match_parent"></GridView>
+                        android:layout_height="match_parent"></FrameLayout>
                 </LinearLayout>
                 <LinearLayout
                     android:id="@+id/linearLayout5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
-                    <GridView
-                        android:id="@+id/Brohenno"
+                    <FrameLayout
+                        android:id="@+id/tabHostPerehodBrohe"
                         android:layout_width="match_parent"
-                        android:numColumns="2"
-                        android:layout_height="match_parent"></GridView>
+                        android:layout_height="match_parent"></FrameLayout>
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

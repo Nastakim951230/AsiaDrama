@@ -1,14 +1,31 @@
 package com.example.asia.Fragments;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.asia.Base.ModelUsers;
+import com.example.asia.Base.RetrofitAPI;
+import com.example.asia.Navigate;
 import com.example.asia.R;
+
+import java.io.ByteArrayOutputStream;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +42,9 @@ public class Nastroiki_Fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    public static ModelUsers userModel;
+    TextView login;
+    ImageView image;
     public Nastroiki_Fragment() {
         // Required empty public constructor
     }
@@ -60,7 +79,59 @@ public class Nastroiki_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nastroiki_, container, false);
+        View v = inflater.inflate(R.layout.fragment_nastroiki_, container, false);
+        login=(TextView) v.findViewById(R.id.UsersName);
+        image=(ImageView)v.findViewById(R.id.UserImage);
+        callGetUser();
+        return v;
+    }
+    public Bitmap StringToBitMap(String encodedString) {
+        try {
+            byte[] encodeByte = Base64.decode(encodedString, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+            return bitmap;
+        } catch (Exception e) {
+            e.getMessage();
+            return null;
+        }
+    }
+    public void callGetUser()
+    {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/Users/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
+        Call<ModelUsers> call = retrofitAPI.getDATAUser(Navigate.index);
+        call.enqueue(new Callback<ModelUsers>() {
+            @Override
+            public void onResponse(Call<ModelUsers> call, Response<ModelUsers> response) {
+
+                if(!response.isSuccessful())
+                {
+                    Toast.makeText(getActivity(), "При выводе данных возникла ошибка", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                userModel = new ModelUsers(0,response.body().getNickname(), response.body().getLogin(), response.body().getPassword(), response.body().getPhotoUsers(), response.body().getRole());
+                login.setText(response.body().getNickname());
+                if(response.body().getPhotoUsers() == null)
+                {
+                    image.setImageResource(R.drawable.users);
+
+                }
+                else
+                {
+                    Bitmap bitmap = StringToBitMap(response.body().getPhotoUsers());
+                    image.setImageBitmap(bitmap);
+
+                }
+            }
+            @Override
+            public void onFailure(Call<ModelUsers> call, Throwable t) {
+                Toast.makeText(getActivity(), "При выводе данных возникла ошибка: " + t.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }

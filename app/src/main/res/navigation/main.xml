@@ -6,15 +6,11 @@
     app:startDestination="@id/nav_glavnoe">
 
 
-    <fragment
-        android:id="@+id/nav_izbrannoe"
-        android:name="com.example.asia.Fragments.Izbrannoe_Fragment"
-        android:label="Избранное"
-        tools:layout="@layout/fragment_izbrannoe_" />
+
     <fragment
         android:id="@+id/nav_nastroika"
         android:name="com.example.asia.Fragments.Nastroiki_Fragment"
-        android:label="Настройки"
+        android:label="Личный кабинет"
         tools:layout="@layout/fragment_nastroiki_" />
 
     <fragment
@@ -38,6 +34,11 @@
         android:name="com.example.asia.Fragments.Perehod_glavnay"
         android:label="Главная"
         tools:layout="@layout/fragment_perehod_glavnay" />
+    <fragment
+        android:id="@+id/nav_izbrannoe"
+        android:name="com.example.asia.Fragments.Perhod_Izbrannoe"
+        android:label="Избранное"
+        tools:layout="@layout/fragment_perhod__izbrannoe" />
 
 
 </navigation>

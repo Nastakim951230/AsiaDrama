@@ -27,6 +27,9 @@ public interface RetrofitAPI {
     Call<ModelActor> createPost(@Body ModelActor dataModal);
     @POST("Genres")
     Call<ModelGanr> createPost(@Body ModelGanr dataModal);
-    @GET ("Genres")
-    Call<ModelGanr> getGanr(@Body ModelGanr dataModal);
+    @GET("{id}")
+    Call<ModelUsers> getDATAUser(@Query("id") int id);
+    @GET("{id}")
+    Call<KInoIzbrannoeModel> getIzbrannoe(@Query("id") int id);
+
 }

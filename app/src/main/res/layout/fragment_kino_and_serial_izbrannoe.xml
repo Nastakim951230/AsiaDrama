@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.KinoAndSerialIzbrannoe">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Blue_background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/PodVverh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@color/Dark_Blue_background">
+
+                <ImageButton
+                    android:id="@+id/NextGlavnay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:backgroundTint="@color/Dark_Blue_background"
+                    android:src="@drawable/next" />
+            </RelativeLayout>
+
+            <ImageButton
+                android:id="@+id/banner"
+                android:background="@color/Blue_background"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/picture"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/PodVverh" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Название кино"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textColor="@color/text"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@+id/AddGrup"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
+
+
+                app:layout_goneMarginEnd="16dp" />
+
+            <TextView
+                android:id="@+id/countri_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Страна:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <TextView
+                android:id="@+id/countri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Страна"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/text"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBaseline_toBaselineOf="@+id/countri_text"
+                app:layout_constraintStart_toEndOf="@+id/countri_text" />
+
+            <TextView
+                android:id="@+id/yaer_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Год:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countri_text" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="год"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/text"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBaseline_toBaselineOf="@+id/yaer_text"
+                app:layout_constraintStart_toEndOf="@+id/yaer_text" />
+
+            <TextView
+                android:id="@+id/time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Время:"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/yaer_text" />
+
+            <Button
+                android:id="@+id/AddGrup"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/text"
+                android:drawableRight="@drawable/ic_action_turned"
+                android:text="В список"
+                android:textColor="@color/white"
+                android:textSize="8sp"
+
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/banner"
+                tools:layout_editor_absoluteX="192dp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="время"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textColor="@color/text"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintBaseline_toBaselineOf="@+id/time_text"
+                app:layout_constraintStart_toEndOf="@+id/time_text" />
+
+
+            <GridView
+                android:id="@+id/ganr"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:numColumns="3"
+                app:layout_constraintBottom_toTopOf="@+id/short_descriptions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/time_text" />
+
+            <TextView
+                android:id="@+id/short_descriptions"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="О кино"
+                android:textColor="@color/text"
+                app:layout_constraintTop_toBottomOf="@+id/ganr" />
+
+            <TextView
+                android:id="@+id/actor_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Актёры"
+                android:textColor="@color/text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/short_descriptions" />
+
+            <ListView
+                android:id="@+id/actor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+
+                app:layout_constraintTop_toBottomOf="@+id/actor_text" />
+            <TextView
+                android:id="@+id/Pometki"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Пометки:"
+                android:textColor="@color/text"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actor" />
+            <EditText
+                android:id="@+id/Comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/style"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/rubik_light"
+                app:layout_constraintTop_toBottomOf="@+id/Pometki" />
+            <Button
+                android:id="@+id/btnAddComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp"
+
+                android:backgroundTint="@color/text"
+                android:fontFamily="@font/rubik_light"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/Comment"
+                android:padding="9dp"
+                android:text="@string/add"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="15dp" />
+            <ListView
+                android:id="@+id/DannPometki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btnAddComment"></ListView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

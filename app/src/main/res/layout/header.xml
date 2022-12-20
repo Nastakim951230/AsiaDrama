@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:adjustViewBounds="true"
-        android:src="@drawable/users" />
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/NameUsers"
@@ -23,9 +23,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center_horizontal"
-        android:text="NameUsers"
-        android:textColor="@color/black"
-        android:textSize="20sp">
+        android:text="AsiaDrama"
+        android:textColor="@color/text"
+        android:textSize="24sp">
 
     </TextView>
 
