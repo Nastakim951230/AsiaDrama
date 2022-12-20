@@ -280,10 +280,6 @@ public class Add_Actor extends Fragment {
         } catch (ParseException e) {
 
         }
-
-
-
-
     }
 
 }

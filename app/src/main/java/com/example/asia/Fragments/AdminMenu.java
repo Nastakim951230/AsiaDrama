@@ -13,8 +13,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.example.asia.Base.ModelActor;
+import com.example.asia.Base.ModelGanr;
+import com.example.asia.Base.RetrofitAPI;
 import com.example.asia.R;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -115,15 +130,36 @@ public class AdminMenu extends Fragment {
                         EditText editText = customLayout.findViewById(R.id.NameGanr);
                         sendDialogDataToActivity(editText.getText().toString());
                     }
-
-
-                    // сделать что-то с данными, поступающими из AlertDialog
-                    private void sendDialogDataToActivity(String ganr) {
-                    }
+                            private void sendDialogDataToActivity(String ganr) {
+                                postAdd(ganr);
+                            }
                 }).show();
             }
         });
         return inflatedView;
 
+    }
+    private void postAdd(String ganr)
+    {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
+        ModelGanr modal = new ModelGanr(ganr);
+            Call<ModelGanr> call = retrofitAPI.createPost(modal);
+            call.enqueue(new Callback<ModelGanr>() {
+                @Override
+                public void onResponse(Call<ModelGanr> call, Response<ModelGanr> response) {
+                    Toast.makeText(getActivity(), "Запись добавлена", Toast.LENGTH_SHORT).show();
+
+                    ModelGanr responseFromAPI = response.body();
+                }
+
+                @Override
+                public void onFailure(Call<ModelGanr> call, Throwable t) {
+
+                }
+            });
     }
 }

@@ -25,4 +25,6 @@ public interface RetrofitAPI {
 
     @POST("Actors")
     Call<ModelActor> createPost(@Body ModelActor dataModal);
+    @POST("Genres")
+    Call<ModelGanr> createPost(@Body ModelGanr dataModal);
 }
