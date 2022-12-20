@@ -1,5 +1,6 @@
 package com.example.asia.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,8 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
+import com.example.asia.Base.RetrofitAPI;
+import com.example.asia.Base.UsersModel;
+import com.example.asia.Input;
 import com.example.asia.R;
+import com.example.asia.Registrasua;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,5 +88,38 @@ public class Add_Admin extends Fragment {
         });
         return inflatedView;
 
+    }
+    private void postDataUser(String nickname,String login, String password) {
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://ngknn.ru:5001/NGKNN/%D0%A2%D1%80%D0%B8%D1%84%D0%BE%D0%BD%D0%BE%D0%B2%D0%B0%D0%90%D0%A0/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
+
+        UsersModel modal = new UsersModel(nickname, login, password, null, 1);
+
+        Call<UsersModel> call = retrofitAPI.createUser(modal);
+
+        call.enqueue(new Callback<UsersModel>() {
+            @Override
+            public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
+                if(!response.isSuccessful())
+                {
+                    Toast.makeText(getActivity(), "При регистрации пользователя возникла ошибка 3", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(Registrasua.this, "Пользователь успешно зарегистрирован", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent( Registrasua.this, Input.class);
+                startActivity(intent);
+
+
+            }
+            @Override
+            public void onFailure(Call<UsersModel> call, Throwable t) {
+                Toast.makeText(Registrasua.this, "При регистрации пользователя возникла ошибка: 4" + t.getMessage(), Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
 }

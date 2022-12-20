@@ -102,7 +102,7 @@
                     android:backgroundTint="@color/text"
                     android:fontFamily="@font/rubik_light"
                     android:gravity="center"
-                    android:onClick="login"
+                    android:onClick="iz"
                     android:padding="9dp"
                     android:text="@string/Vhod"
                     android:textColor="@color/white"

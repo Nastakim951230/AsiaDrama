@@ -34,7 +34,11 @@ public class Input extends AppCompatActivity {
         Intent intent = new Intent( this, Registrasua.class);
         startActivity(intent);
     }
-
+    public void iz(View v)
+    {
+        Intent intent = new Intent( this, Navigate.class);
+        startActivity(intent);
+    }
 
     public void login(View v)
     {
@@ -89,7 +93,7 @@ public class Input extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ModelUsers> call, Throwable t) {
-                Toast.makeText(Input.this, "При авторизации возникла ошибка : " + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(Input.this, "При авторизации возникла ошибка: " + t.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
