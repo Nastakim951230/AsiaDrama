@@ -43,7 +43,9 @@
         <entry key="..\:/Users/nasty/.android/Praktica_41P/Asia/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/activity_input.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/activity_navigate.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_add__actor.xml" value="0.21897435897435896" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_add__admin.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_add__predlogenie__users.xml" value="0.21897435897435896" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_brohenno.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_glavnay_.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_izbrannoe_.xml" value="0.15833333333333333" />
@@ -52,10 +54,14 @@
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_nastroiki_.xml" value="0.14739583333333334" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_otlogenno.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_perhod__izbrannoe.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_predlogenie_user.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_predlogenie_vse.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_prosmotrenno.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_smotr.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_spiski.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/fragment_zaplanirovanno.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/header.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/mask_sentences.xml" value="0.21897435897435896" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/layout/maska_kino.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaDrama/app/src/main/res/menu/drawer_menu.xml" value="0.14739583333333334" />
         <entry key="..\:/Users/nasty/.android/Praktica_41P/AsiaNEW/app/src/main/res/drawable/style_fon_kino.xml" value="0.1" />

@@ -95,6 +95,7 @@ public class Input extends AppCompatActivity {
                     {
                         Toast.makeText(Input.this, "Вы вошли как администратор", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Input.this, Navigate.class);
+                        intent.putExtra("key", response.body().getIdUser());
                         startActivity(intent);
                     }
                 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.example.asia.R;
@@ -29,6 +30,7 @@ public class SpiskiFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     ImageButton addButton;
+    Button predlo,userpreg;
     public SpiskiFragment() {
         // Required empty public constructor
     }
@@ -58,7 +60,10 @@ public class SpiskiFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        PredlogenieVse fragment = new PredlogenieVse();
+        ft.replace(R.id.Prdlog, fragment);
+        ft.commit();
     }
 
 
@@ -76,6 +81,27 @@ public class SpiskiFragment extends Fragment {
                 ft.replace(R.id.container, fragment);
 
 
+                ft.commit();
+            }
+        });
+
+        predlo=(Button) inflatedView.findViewById(R.id.Predlogenie);
+        predlo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                PredlogenieVse fragment = new PredlogenieVse();
+                ft.replace(R.id.Prdlog, fragment);
+                ft.commit();
+            }
+        });
+        userpreg=(Button) inflatedView.findViewById(R.id.MyPredlogenie);
+        userpreg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                PredlogenieUser fragment = new PredlogenieUser();
+                ft.replace(R.id.Prdlog, fragment);
                 ft.commit();
             }
         });
